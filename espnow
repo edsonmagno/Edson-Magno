@@ -11,7 +11,7 @@
 //É importante que o código fonte dos Slaves tenha este mesmo array com os mesmos //gpios
 //na mesma ordem
 
-uintB gpios[] = {23,2};
+uint8_t gpios[] = {23,2};
 
 // No setup iremos calcular a quantidade de pinos e colocar nesta variavel,
 //assim não precisamos trocar aqui toda vez que mudarmos a quantidade de pinos,
@@ -20,11 +20,14 @@ uintB gpios[] = {23,2};
 int gpioCount;
 //Mac Adress dos slaves para os quais iremos enviar a leitura
 //Se quiser enviar para todos os Slaves utilize apenas o endereço de broadcast {0xFF, OxFF, OxFF, 0xFF, 0xFF, 0xFF}
-//Se quiser enviar para
+//Se quiser enviar para ESPs especificos coloque o Mac Adress (obtido atraves
 
-
+uint8_t macSlaves[][6] = {
 //Se enviar para ESPs especificos, coloque cada endereço separado por virgula
-
+//{Ox24, OxOA, OxC4, OxOE, Ox3F, OxD1},{Ox24, OxOA, OxC4, OxOE, Ox4E, OxC3}
+// Se for enviar para todos, apenas deixe o endereço de broadcast {OxFF,OxFF,OxFF,OxFFOxFF}
+{OxFF,OxFF,OxFF,OxFFOxFF}
+};
           
     
        
