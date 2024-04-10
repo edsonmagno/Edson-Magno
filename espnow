@@ -78,6 +78,24 @@ memcpy(slave.peer_addr, macSlaves[i],sideof(macSlaves[i]));
 esp_now_add_peer(&slave);
 }
 
+//Registra o calback que nos informara sobre o status do envio
+// A função que sera executada é OnDataSent e está declarada mais abaixo
+esp_now_register_send_cb(DataSent);
+
+/Para cada pino que está no array gpios
+
+for(int i=0; i<gpioCount;i++){
+//colocamos em modo de leitura
+pinMode(gpios[i], INPUT);
+}
+
+//chama a função send
+
+send();
+}
+
+
+
    
 
 
